@@ -4,8 +4,8 @@ __license__ = "MIT"
 
 import pandas as pd
 
-from . import regions_to_bins
+from .regions_to_bins import regions_to_bins
 
 df = pd.read_table(snakemake.input[0])
-df = regions_to_bins.regions_to_bins(df)
+df = regions_to_bins(df)
 df.to_csv(snakemake.output[0], index=False)
